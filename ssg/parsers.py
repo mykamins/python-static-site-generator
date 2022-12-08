@@ -3,9 +3,7 @@ from pathlib import Path
 import shutil
 
 class Parser:
-    def __init__(self):
-        #'extensions' is a list of strings
-        self.extensions : List[str] = []    #type: List[str]
+    extensions: List[str] = []
 
     def valid_extension(self, extension):
         return extension in  self.extensions
@@ -29,8 +27,7 @@ class Parser:
         shutil.copy2(path, dest / path.relative_to(source))
 
 class ResourceParser(Parser):
-    def __init__(self):
-        self.extensions = [".jpg", ".png", ".gif", ".css", ".html"]
+    extensions = [".jpg", ".png", ".gif", ".css", ".html"]
 
     def parse(self, path, source, dest):
         self.copy(path, source, dest)
