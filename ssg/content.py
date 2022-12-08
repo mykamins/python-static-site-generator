@@ -35,7 +35,7 @@ class Content(Mapping):
         return self.data.__iter__()
 
     def __len__(self):
-        return self.data.__len__()
+        return len(self.data)
 
     def __repr__(self):
         data = directory()
