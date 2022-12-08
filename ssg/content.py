@@ -39,4 +39,7 @@ class Content(Mapping):
 
     def __repr__(self):
         data = directory()
+        for key, value in self.data.items():
+            if key is not "content":
+                data[key] = value
         return str(data)
