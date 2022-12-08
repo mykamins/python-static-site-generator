@@ -8,10 +8,7 @@ class Parser:
     def valid_extension(self, extension):
         return extension in  self.extensions
 
-    def parse(self, path, source, dest):
-        #'path' is a Path
-        #'source' is a Path
-        #'dest' is a Path
+    def parse(self, path: Path, source: Path, dest: Path):
         raise NotImplementedError
 
     def read(self, path):
@@ -29,5 +26,5 @@ class Parser:
 class ResourceParser(Parser):
     extensions = [".jpg", ".png", ".gif", ".css", ".html"]
 
-    def parse(self, path, source, dest):
+    def parse(self, path: Path, source: Path, dest: Path):
         self.copy(path, source, dest)
